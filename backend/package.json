@@ -1,0 +1,18 @@
+{
+  "name": "birthday-event-planner-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check controllers/guestController.js && node --check controllers/expenseController.js && node --check controllers/rsvpController.js && node --check controllers/wishController.js && node --check middleware/asyncHandler.js && node --check middleware/errorHandler.js && node --check models/Guest.js && node --check models/Expense.js && node --check models/RSVP.js && node --check models/Wish.js && node --check routes/guestRoutes.js && node --check routes/expenseRoutes.js && node --check routes/rsvpRoutes.js && node --check routes/wishRoutes.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

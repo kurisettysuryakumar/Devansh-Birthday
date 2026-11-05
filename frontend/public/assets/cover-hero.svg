@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 860">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff1f6"/>
+      <stop offset="50%" stop-color="#fff9df"/>
+      <stop offset="100%" stop-color="#eaf9ff"/>
+    </linearGradient>
+    <linearGradient id="flagA" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff7ca8"/>
+      <stop offset="100%" stop-color="#ffd36e"/>
+    </linearGradient>
+    <linearGradient id="flagB" x1="0" x2="1">
+      <stop offset="0%" stop-color="#6dd3ff"/>
+      <stop offset="100%" stop-color="#6de3b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="860" fill="url(#bg)"/>
+  <g opacity="0.85">
+    <circle cx="140" cy="110" r="28" fill="#ffce5d"/>
+    <circle cx="690" cy="130" r="22" fill="#7cc7ff"/>
+    <circle cx="650" cy="250" r="18" fill="#ff8ec2"/>
+    <circle cx="120" cy="660" r="22" fill="#ffad6b"/>
+  </g>
+  <g fill="none" stroke="#d18d90" stroke-width="3" opacity="0.7">
+    <path d="M80 190 C140 170, 180 170, 220 190"/>
+    <path d="M580 190 C660 170, 700 170, 750 190"/>
+  </g>
+  <g>
+    <path d="M70 270 L150 270 L120 390 L70 270 Z" fill="url(#flagA)"/>
+    <path d="M125 270 L205 270 L174 390 L125 270 Z" fill="#ffd972"/>
+    <path d="M650 250 L760 250 L720 390 L650 250 Z" fill="url(#flagB)"/>
+    <path d="M590 250 L670 250 L640 390 L590 250 Z" fill="#ff9ed4"/>
+  </g>
+  <g>
+    <path d="M235 150 C255 100, 320 90, 355 150 C370 130, 420 120, 445 150 C450 100, 520 80, 560 125 C622 120, 680 145, 705 195 L780 195 L780 830 L20 830 L20 195 L90 195 C137 132, 185 130, 235 150 Z" fill="#fffdf4" opacity="0.75"/>
+  </g>
+  <g>
+    <path d="M140 275 C120 250, 145 210, 164 198 C182 187, 208 190, 220 214 C233 238, 241 260, 255 280 C300 245, 347 235, 390 250 C400 220, 425 196, 462 192 C492 188, 520 202, 544 238 C570 280, 585 296, 608 299 C595 330, 548 336, 528 321 C506 306, 487 263, 456 262 C491 304, 441 349, 411 335 C379 320, 381 258, 346 260 C317 261, 292 310, 263 328 C239 342, 188 344, 155 315 C152 300, 147 287, 140 275 Z" fill="#fff5d1"/>
+    <path d="M360 300 L430 300 L405 445 L355 445 Z" fill="#f7b562"/>
+    <rect x="325" y="445" width="120" height="72" rx="12" fill="#ffd978"/>
+    <rect x="298" y="518" width="175" height="36" rx="10" fill="#fca7a1"/>
+    <rect x="330" y="430" width="12" height="45" rx="6" fill="#f7d244"/>
+    <rect x="440" y="430" width="12" height="45" rx="6" fill="#f7d244"/>
+    <rect x="375" y="360" width="10" height="30" rx="5" fill="#ffced4"/>
+    <circle cx="365" cy="376" r="7" fill="#f9a3ae"/>
+    <circle cx="425" cy="376" r="7" fill="#f9a3ae"/>
+    <path d="M370 392 C385 410, 401 410, 425 392" stroke="#fb7c8c" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  <g fill="#ff7f82">
+    <circle cx="160" cy="570" r="10"/>
+    <circle cx="640" cy="560" r="12"/>
+    <circle cx="525" cy="660" r="9"/>
+    <circle cx="220" cy="670" r="11"/>
+  </g>
+  <g fill="#ffcf62" font-family="Arial, sans-serif" font-size="42" font-weight="700">
+    <text x="325" y="705" text-anchor="middle">1ST</text>
+  </g>
+  <g fill="#7cc7ff" font-family="Arial, sans-serif" font-size="30" font-weight="700">
+    <text x="400" y="760" text-anchor="middle">BIRTHDAY</text>
+  </g>
+</svg>

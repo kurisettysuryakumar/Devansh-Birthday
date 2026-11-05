@@ -1,0 +1,46 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "20.x"
+    displayName: Use Node.js 20
+
+  - script: npm ci
+    workingDirectory: frontend
+    displayName: Install frontend dependencies
+
+  - script: npm run build
+    workingDirectory: frontend
+    displayName: Build frontend
+
+  - script: npm ci
+    workingDirectory: backend
+    displayName: Install backend dependencies
+
+  - script: npm run check
+    workingDirectory: backend
+    displayName: Validate backend JavaScript
+
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: $(Build.SourcesDirectory)
+      contents: |
+        backend/**
+        frontend/dist/**
+        !**/node_modules/**
+        !**/.env
+      targetFolder: $(Build.ArtifactStagingDirectory)/birthday-event-planner
+    displayName: Prepare App Service artifact
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: $(Build.ArtifactStagingDirectory)/birthday-event-planner
+      artifactName: birthday-event-planner
+    displayName: Publish build artifact

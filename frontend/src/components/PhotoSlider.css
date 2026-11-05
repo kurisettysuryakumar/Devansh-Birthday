@@ -1,0 +1,62 @@
+.birthday-slider :is(button, a):focus-visible { outline: 3px solid #198f9b; outline-offset: 3px; }
+
+.birthday-slider {
+  position: fixed;
+  inset: 0;
+  width: min(1440px, calc(100vw - 32px));
+  height: min(1000px, calc(100dvh - 32px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d6b164;
+  border-radius: 16px;
+  background: #17130f;
+  color: #fff8e3;
+  box-shadow: 0 24px 90px #0009;
+}
+.birthday-slider::backdrop { background: rgb(18 12 10 / 92%); backdrop-filter: blur(7px); }
+.birthday-slider__layout { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; width: 100%; height: 100%; }
+.birthday-slider__header { display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: #261d15; }
+.birthday-slider__category { margin: 0 0 3px; color: #e8c365; font-size: 0.75rem; }
+.birthday-slider__header h3 { margin: 0; color: #fff8e3; font: 700 1rem/1.3 Georgia, serif; }
+.birthday-slider__counter { margin-left: auto; color: #e6d9c2; font-size: 0.85rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.birthday-slider button,
+.birthday-slider a { -webkit-tap-highlight-color: transparent; }
+.birthday-slider__close,
+.birthday-slider__arrow { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid #e8c36580; border-radius: 50%; color: #fff8e3; background: rgb(38 29 21 / 85%); cursor: pointer; font: 400 2rem/1 Georgia, serif; }
+.birthday-slider__stage { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; touch-action: pan-y pinch-zoom; }
+.birthday-slider__photo { grid-area: 1 / 1; display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; animation: birthdayPhotoReveal 240ms ease both; }
+.birthday-slider__status { position: absolute; z-index: 1; max-width: min(70%, 420px); margin: 0; padding: 12px 18px; border-radius: 8px; color: #fff8e3; background: #261d15; text-align: center; font-size: 0.9rem; }
+.birthday-slider__arrow { position: absolute; z-index: 2; top: calc(50% - 24px); width: 48px; height: 48px; font-size: 2.5rem; }
+.birthday-slider__arrow--previous { left: 12px; }
+.birthday-slider__arrow--next { right: 12px; }
+.birthday-slider__footer { padding: 14px 20px; background: #261d15; }
+.birthday-slider__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.birthday-slider__actions :is(button, a) { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 1px solid #b6914e; border-radius: 8px; color: #fff8e3; background: #36281c; font: 600 0.85rem/1.3 system-ui, sans-serif; text-decoration: none; cursor: pointer; }
+.birthday-slider__actions .birthday-slider__download { border-color: #e8c365; background: #e8c365; color: #301e12; }
+.birthday-slider__actions :is(button, a):hover,
+.birthday-slider__close:hover,
+.birthday-slider__arrow:hover { filter: brightness(1.2); }
+.birthday-slider__footer p { margin: 10px 0 0; color: #c9b99e; text-align: center; font-size: 0.75rem; line-height: 1.5; }
+
+@keyframes birthdayPhotoReveal {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 640px) {
+  .birthday-slider { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
+  .birthday-slider__header { padding: max(10px, env(safe-area-inset-top)) 12px 10px; gap: 10px; }
+  .birthday-slider__footer { padding: 10px 10px max(12px, env(safe-area-inset-bottom)); }
+  .birthday-slider__actions { gap: 6px; }
+  .birthday-slider__actions :is(button, a) { padding: 9px 10px; font-size: 0.75rem; }
+  .birthday-slider__arrow { width: 44px; height: 44px; background: rgb(38 29 21 / 65%); }
+  .birthday-slider__arrow--previous { left: 6px; }
+  .birthday-slider__arrow--next { right: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birthday-slider__photo { animation: none; }
+}
